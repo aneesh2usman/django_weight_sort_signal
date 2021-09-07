@@ -66,7 +66,7 @@ In receiver callback we can give weight to sort
         
 We can dispatch signal anywhere as following.
 
-#. :
+#. ::
 
     from .signals import order_refresh
 
