@@ -32,9 +32,9 @@ Signal
 
 #. ``signal.py``::
 
-    from django_weight_sort_signal.dispatcher import WeightSignal
+    from django_weight_sort_signal.dispatcher import WeightSortSignal
 
-    order_refresh = WeightSignal(providing_args=["order"])
+    order_refresh = WeightSortSignal(providing_args=["order"])
 
 Reciever
 =====
