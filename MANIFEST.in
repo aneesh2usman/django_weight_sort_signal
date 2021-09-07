@@ -1,0 +1,5 @@
+include LICENSE.txt
+include CONTRIBUTORS
+include README.rst
+include MANIFEST.in
+recursive-exclude docs/_build *
