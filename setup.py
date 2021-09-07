@@ -22,17 +22,18 @@ classifiers = [
  
 setup(
   name='django-weight-sort-signal',
-  version='0.0.1',
-  description='django signal sorting on weight (priority) via Django 2.*',
+  version='0.0.2',
+  description='django signal sorting on weight via Django 2.*',
   # long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   long_description=open('README.rst').read(),
+  long_description_content_type='text/markdown',
   url='https://github.com/aneesh2usman/django_weight_signal',  
   author='aneesh usman',
   author_email='aneeshplusone@gmail.com',
   license='MIT', 
   classifiers=classifiers,
   include_package_data=True,
-  keywords='Signal, signal sorting, receiver', 
+  keywords='Signal signal sorting receiver', 
   packages=find_packages(),
   python_requires=">=3.6",
   install_requires=[''] 

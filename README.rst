@@ -1,7 +1,5 @@
+django weight sort signal
 =====================
-django-cropper-image
-=====================
-
 
 django_weight_sort_signal is change order of Django signals sorting by using weight
 
