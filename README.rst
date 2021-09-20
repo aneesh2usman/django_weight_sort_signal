@@ -1,7 +1,8 @@
 django weight sort signal
 =====================
 
-django_weight_sort_signal is change order of Django signals sorting by using weight
+django_weight_sort_signal is change order of Django signals sorting by using weight.
+its help you weight signal handling with third-party apps also without changing signal class
 
 
 
@@ -23,7 +24,24 @@ Configuration
             'django_weight_sort_signal',
         ]
     '''
-  
+
+Configuration for third party app signal usage
+=============
+#. ``settings.py``::
+
+    INSTALLED_APPS = [
+            
+            'django_weight_sort_signal', #django_weight_sort_signal put into top in the INSTALLED_APPS
+            'django.contrib.admin',
+            'django.contrib.auth',
+            ...
+        ]
+    '''  
+
+    DJANGO_WEIGHT_SORT_SIGNAL ={
+        'DEFAULT_SIGNAL':True, #its help you weight signal handling with third-party apps without changing signal class
+        
+    }
 
 Signal 
 ======
@@ -61,7 +79,23 @@ In receiver callback we can give weight to sort
         #shipping amount calculation functionality triggered on order_refresh signal dispatch
         pass
 
-        
+
+Reciever for third-party apps Eg:
+=================================
+In receiver callback we can give weight to sort without changing the base signal
+
+#. ``receiver.py``::
+
+    from django.contrib.auth.signals import user_logged_in
+
+    def do_stuff(sender, user, request, **kwargs):
+        #ADD SOME CODE 
+    user_logged_in.connect(do_stuff,weight=10)
+
+    def do_stuff2(sender, user, request, **kwargs):
+        #ADD SOME CODE 
+    user_logged_in.connect(do_stuff2,weight=20)
+
 We can dispatch signal anywhere as following.
 
 #. ::
