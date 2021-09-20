@@ -26,7 +26,7 @@ Configuration
     '''
 
 Configuration for third party app signal usage
-=============
+==============================================
 #. ``settings.py``::
 
     INSTALLED_APPS = [
@@ -53,7 +53,7 @@ Signal
     order_refresh = WeightSortSignal(providing_args=["order"])
 
 Reciever
-=====
+========
 In receiver callback we can give weight to sort 
 
 #. ``receiver.py``::
@@ -97,6 +97,9 @@ In receiver callback we can give weight to sort without changing the base signal
     user_logged_in.connect(do_stuff2,weight=20)
 
 We can dispatch signal anywhere as following.
+
+Send :
+=================================
 
 #. ::
 
